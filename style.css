@@ -664,3 +664,21 @@ html {
         height: 200px;
     }
 }
+.resume-btn {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    padding: 12px 22px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
