@@ -11,30 +11,63 @@ body {
     color: #333;
     line-height: 1.6;
 }
+/* ===== NAVBAR ===== */
 
-/* Navigation Bar */
-nav {
-    background-color: #333;
-    padding: 15px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #ffd700;
-}
 nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+
+    background-color: #333;
+    border-bottom: 3px solid #2563eb;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 15px 20px 12px;
 }
 
+nav h2 {
+    color: white;
+    font-size: 30px;
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hover */
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+/* Mobile Menu Button */
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
 /* Headings */
 h1 {
     text-align: center;
@@ -326,9 +359,13 @@ footer p {
 @media (max-width: 768px) {
 
     /* Navigation */
+    @media (max-width: 768px) {
     nav {
-        padding: 12px 5px;
+        height: auto;
+        min-height: 60px;
+        padding: 12px 20px;
     }
+}
 
     nav a {
         display: inline-block;
@@ -836,43 +873,38 @@ html {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== Mobile ===== */
-
 @media (max-width: 768px) {
 
-    .hero {
-        padding: 50px 20px;
+    nav {
+        padding: 12px 20px;
     }
 
-    .hero-content {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .hero-text h1 {
-        font-size: 40px;
-    }
-
-    .hero-text h2 {
+    nav h2 {
         font-size: 24px;
+        margin-bottom: 10px;
     }
 
-   .hero-description {
-    font-size: 16px;
-    padding: 0;
-}
-
-    .hero-buttons {
-        justify-content: center;
+    .menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
     }
 
-    .hero-image {
-        flex: none;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 15px 0 5px;
     }
 
-    .profile-img {
-        width: 220px;
-        height: 220px;
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 16px;
     }
 }
 /* ===== Hero Social Buttons ===== */
